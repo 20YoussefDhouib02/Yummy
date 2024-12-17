@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/register');
+          Navigator.pushNamed(context, '/login');
         },
         child: const Text(
           "Let's Cook!",
@@ -73,15 +73,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          'Already have an account?',
+          "Don't have an account?",
           style: TextStyle(fontSize: 14, color: Colors.white),
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, '/register');
           },
           child: const Text(
-            ' Login',
+            ' Register',
             style: TextStyle(
               fontSize: 14,
               color: Colors.black,

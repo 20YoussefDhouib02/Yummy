@@ -148,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.black87,
+                color: CustomColors.primaryColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
@@ -183,7 +183,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'Profile',
           style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
@@ -198,11 +198,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 children: [
+                  SizedBox(height: 20),
                   CircleAvatar(
-                    radius: 50,
+                    radius: 55,
                     backgroundImage: _authService.currentUser?.photoURL != null
                         ? NetworkImage(_authService.currentUser!.photoURL!)
                         : null,

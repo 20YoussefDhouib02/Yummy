@@ -174,7 +174,7 @@ class _IngredientsSelectionScreenState
         child: Text(
           ingredient,
           style: TextStyle(
-            color: isSelected ? Colors.white : Colors.grey[800],
+            color: isSelected ? Colors.white : CustomColors.textColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -191,7 +191,7 @@ class _IngredientsSelectionScreenState
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.grey[800],
+            color: CustomColors.textColor,
           ),
         ),
         const SizedBox(height: 10),
@@ -262,11 +262,11 @@ class _IngredientsSelectionScreenState
       appBar: AppBar(
         title: Text(
           'Ingredients',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
       ),
       backgroundColor: Colors.grey[100],
       body: SafeArea(child: _buildContent()),

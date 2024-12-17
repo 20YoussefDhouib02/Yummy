@@ -58,7 +58,7 @@ class _AppliancesSelectionScreenState extends State<AppliancesSelectionScreen> {
         child: Text(
           appliance,
           style: TextStyle(
-            color: isSelected ? Colors.white : Colors.grey[800],
+            color: isSelected ? Colors.white : CustomColors.textColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -90,7 +90,7 @@ class _AppliancesSelectionScreenState extends State<AppliancesSelectionScreen> {
         child: Text(
           'Any Appliance',
           style: TextStyle(
-            color: isAnyAppliance ? Colors.white : Colors.grey[800],
+            color: isAnyAppliance ? Colors.white : CustomColors.textColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -106,7 +106,7 @@ class _AppliancesSelectionScreenState extends State<AppliancesSelectionScreen> {
           'What are your available appliances?',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 20),
         _buildAnyOption(),
         Expanded(
           child: Wrap(
@@ -156,11 +156,11 @@ class _AppliancesSelectionScreenState extends State<AppliancesSelectionScreen> {
       appBar: AppBar(
         title: Text(
           'Appliances',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
       ),
       backgroundColor: Colors.grey[200],
       body: _buildContent(),

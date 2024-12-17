@@ -129,7 +129,10 @@ class _LoadingScreenState extends State<LoadingScreen>
           const SizedBox(height: 30),
           const Text(
             'We are preparing your recipe...',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: CustomColors.textColor),
           ),
         ],
       );

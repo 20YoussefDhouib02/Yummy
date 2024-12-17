@@ -215,7 +215,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               fontWeight: FontWeight.bold,
               color: _selectedTab == index
                   ? CustomColors.primaryColor
-                  : Colors.grey[600],
+                  : CustomColors.textColor,
             ),
           ),
         ),

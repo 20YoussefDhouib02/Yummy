@@ -63,7 +63,7 @@ class _OccasionScreenState extends State<OccasionScreen> {
               occasion['title']!,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey[800],
+                color: CustomColors.textColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -128,11 +128,11 @@ class _OccasionScreenState extends State<OccasionScreen> {
       appBar: AppBar(
         title: Text(
           'Occasion',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
       ),
       backgroundColor: Colors.grey[200],
       body: _buildContent(),

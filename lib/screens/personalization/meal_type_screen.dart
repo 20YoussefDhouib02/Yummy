@@ -15,7 +15,7 @@ class _MealTypeScreenState extends State<MealTypeScreen> {
 
   final List<Map<String, String>> mealTypes = [
     {'title': 'Family', 'icon': 'assets/icons/family.png'},
-    {'title': 'Romantic Date', 'icon': 'assets/icons/date.png'},
+    {'title': 'Date', 'icon': 'assets/icons/date.png'},
     {'title': 'Friends', 'icon': 'assets/icons/friends.png'},
   ];
 
@@ -61,7 +61,7 @@ class _MealTypeScreenState extends State<MealTypeScreen> {
               mealType['title']!,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey[800],
+                color: CustomColors.textColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -128,11 +128,11 @@ class _MealTypeScreenState extends State<MealTypeScreen> {
       appBar: AppBar(
         title: Text(
           'Meal',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
       ),
       backgroundColor: Colors.grey[200],
       body: _buildContent(),

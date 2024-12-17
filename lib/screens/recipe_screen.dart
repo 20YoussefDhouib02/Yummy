@@ -120,7 +120,7 @@ ${recipe.instructions.join('\n')}
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text(
-            'Regenerate',
+            'A New Recipe',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             textAlign: TextAlign.center,
           ),
@@ -198,7 +198,7 @@ ${recipe.instructions.join('\n')}
               textAlign: TextAlign.center,
             ),
             content: const Text(
-              'You\'ve already favorited this recipe and can leave without worrying about losing it.',
+              'You\'ve favorited this recipe and can leave without worrying about losing it!',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
@@ -306,16 +306,16 @@ ${recipe.instructions.join('\n')}
       appBar: AppBar(
         title: Text(
           'Yummy',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
-            color: Colors.redAccent,
+            color: const Color.fromARGB(255, 255, 0, 0),
             onPressed: toggleFavorite,
           ),
           IconButton(
@@ -329,16 +329,16 @@ ${recipe.instructions.join('\n')}
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            if (recipeImageUrl != null)
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  recipeImageUrl!,
-                  fit: BoxFit.cover,
-                  height: 150,
-                  width: double.infinity,
-                ),
+            if (recipeImageUrl != null) const SizedBox(height: 20),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.network(
+                recipeImageUrl!,
+                fit: BoxFit.cover,
+                height: 150,
+                width: double.infinity,
               ),
+            ),
             const SizedBox(height: 10),
             Text(
               recipe.name,
@@ -371,7 +371,7 @@ ${recipe.instructions.join('\n')}
                       ),
                       onPressed: _showRegeneratePopup,
                       child: const Text(
-                        'Generate Again',
+                        'A New Recipe',
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
@@ -445,7 +445,7 @@ ${recipe.instructions.join('\n')}
               fontWeight: FontWeight.bold,
               color: _selectedTab == index
                   ? CustomColors.primaryColor
-                  : Colors.grey[600],
+                  : CustomColors.textColor,
             ),
           ),
         ),
@@ -459,7 +459,7 @@ ${recipe.instructions.join('\n')}
       children: [
         const SizedBox(height: 10),
         _buildInfoRow(
-            Icons.timer, 'Temps de preparation: ', recipe.preparation_time),
+            Icons.timer, 'Preparation Time: ', recipe.preparation_time),
       ],
     );
   }

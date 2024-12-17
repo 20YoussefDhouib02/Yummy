@@ -12,10 +12,10 @@ class RegistrationScreen extends StatelessWidget {
       icon: Image.asset('assets/google_logo.png', height: 24),
       label: Text(
         'Continue with Google',
-        style: TextStyle(color: Colors.grey[800], fontSize: 16),
+        style: TextStyle(color: CustomColors.textColor, fontSize: 16),
       ),
       style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.grey[800],
+        foregroundColor: CustomColors.textColor,
         backgroundColor: Colors.white,
         minimumSize: const Size(double.infinity, 50),
         side: BorderSide(color: Colors.grey[300]!),

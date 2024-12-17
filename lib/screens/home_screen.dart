@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         Text(
-          'Hello, ${userName ?? 'User'}!',
+          'Hello, ${userName?.split(' ').first ?? 'User'} !',
           style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -90,11 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
             'Yummy',
-            style: TextStyle(color: Colors.grey[800]),
+            style: TextStyle(color: CustomColors.textColor),
           ),
-          backgroundColor: Colors.grey[200],
+          backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
           elevation: 0,
-          iconTheme: IconThemeData(color: Colors.grey[800]),
+          iconTheme: IconThemeData(color: CustomColors.textColor),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(

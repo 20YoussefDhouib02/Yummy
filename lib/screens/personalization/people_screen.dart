@@ -49,7 +49,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
               title,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey[800],
+                color: CustomColors.textColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -79,7 +79,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                     }
                   : null,
               icon: const Icon(Icons.remove_circle_outline),
-              color: Colors.grey[800],
+              color: CustomColors.textColor,
               iconSize: 30,
             ),
             const SizedBox(width: 20),
@@ -95,7 +95,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                 });
               },
               icon: const Icon(Icons.add_circle_outline),
-              color: Colors.grey[800],
+              color: CustomColors.textColor,
               iconSize: 30,
             ),
           ],
@@ -139,9 +139,15 @@ class _PeopleScreenState extends State<PeopleScreen> {
               ),
             ),
             onPressed: () {
-              Provider.of<RecipePreferences>(context, listen: false)
-                  .updateNumberOfPeople(numberOfPeople);
-              Navigator.pushNamed(context, '/meal_type');
+              if (isOnlyMe) {
+                Provider.of<RecipePreferences>(context, listen: false)
+                    .updateNumberOfPeople(numberOfPeople);
+                Navigator.pushNamed(context, '/ingredients_selection');
+              } else {
+                Provider.of<RecipePreferences>(context, listen: false)
+                    .updateNumberOfPeople(numberOfPeople);
+                Navigator.pushNamed(context, '/meal_type');
+              }
             },
             child: const Text(
               'Next',
@@ -159,11 +165,11 @@ class _PeopleScreenState extends State<PeopleScreen> {
       appBar: AppBar(
         title: Text(
           'Number of People',
-          style: TextStyle(color: Colors.grey[800]),
+          style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey[800]),
+        iconTheme: IconThemeData(color: CustomColors.textColor),
       ),
       backgroundColor: Colors.grey[200],
       body: _buildContent(),
