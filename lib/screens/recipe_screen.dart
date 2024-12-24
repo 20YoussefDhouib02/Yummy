@@ -141,7 +141,7 @@ ${recipe.instructions.join('\n')}
                         .resetPreferences();
                     Navigator.pop(context);
                     Navigator.pushNamedAndRemoveUntil(
-                        context, '/meal_type', (route) => false);
+                        context, '/occasion', (route) => false);
                   },
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(
@@ -294,8 +294,20 @@ ${recipe.instructions.join('\n')}
 
   @override
   Widget build(BuildContext context) {
-    final Recipe recipe = ModalRoute.of(context)!.settings.arguments as Recipe;
+    // Get the recipe from route arguments with null safety
+    final recipe = ModalRoute.of(context)?.settings.arguments as Recipe?;
+    if (recipe == null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('Yummy'),
+        ),
+        body: const Center(
+          child: Text('Recipe not found.'),
+        ),
+      );
+    }
 
+    // Define the tabs
     List<Widget> tabs = [
       _buildDetailsTab(recipe),
       _buildIngredientsTab(recipe),
@@ -308,7 +320,7 @@ ${recipe.instructions.join('\n')}
           'Yummy',
           style: TextStyle(color: CustomColors.textColor),
         ),
-        backgroundColor: Color.fromRGBO(255, 134, 64, 0.85),
+        backgroundColor: const Color.fromRGBO(255, 134, 64, 0.85),
         elevation: 0,
         iconTheme: IconThemeData(color: CustomColors.textColor),
         automaticallyImplyLeading: false,
@@ -330,16 +342,17 @@ ${recipe.instructions.join('\n')}
         child: Column(
           children: [
             if (recipeImageUrl != null) const SizedBox(height: 20),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.network(
-                recipeImageUrl!,
-                fit: BoxFit.cover,
-                height: 150,
-                width: double.infinity,
-              ),
-            ),
-            const SizedBox(height: 10),
+            recipeImageUrl != null
+                ? ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(
+                      recipeImageUrl!,
+                      fit: BoxFit.cover,
+                      height: 150,
+                      width: double.infinity,
+                    ),
+                  )
+                : const SizedBox(height: 10),
             Text(
               recipe.name,
               textAlign: TextAlign.center,
@@ -350,7 +363,9 @@ ${recipe.instructions.join('\n')}
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: tabs[_selectedTab],
+                child: _selectedTab >= 0 && _selectedTab < tabs.length
+                    ? tabs[_selectedTab]
+                    : const Center(child: Text('Invalid tab selected.')),
               ),
             ),
             Row(

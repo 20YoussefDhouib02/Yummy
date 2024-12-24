@@ -58,13 +58,10 @@ class ApiService {
     final ingredientsList = requestData['ingredients'] ?? [];
     final peopleCount = requestData['numberOfPeople'] ?? 1;
     final occasion = requestData['occasion'] ?? 'a common dish';
-    final mealType = requestData['mealType'] ?? 'unknown';
     final appliancesList = requestData['appliances'] ?? [];
     final appliances = appliancesList.isNotEmpty
         ? appliancesList.join(', ')
         : 'no specific appliances';
-
-    print('Meal Type in _buildPrompt: $mealType');
 
     String ingredientsPrompt;
 
@@ -76,12 +73,9 @@ class ApiService {
     }
 
     return '''
-Please suggest a recipe considering only the listed available ingredients in $ingredientsPrompt.It’s not necessary to use all of them, just choose those that pair the most based on your knowledge and create a realistic recipe that actually exists. consider the possibility that it can be a tuisian one.
-The recipe name should be descriptive enough to clearly identify the suggested dish.
-The recipe should serve $peopleCount person(s) and be suitable for $occasion. 
-The meal type is $mealType.
-Use precise measurements, preferably in grams or milliliters. 
-The available appliances are: $appliances.
+Please suggest a recipe considering only the listed available ingredients in $ingredientsPrompt.It’s not necessary to use all of them, just choose those that pair the most based on your knowledge and create a realistic and suitable recipe.
+The recipe name should be descriptive enough to clearly identify the suggested dish and suitable for a $occasion. Use precise measurements, preferably in grams or milliliters. 
+Make sure that the recipe can be prepared with the available appliances, which are: $appliances.
 Format the response ONLY in JSON, without code blocks or additional text, in the following format:
 {
   "name": "Recipe Name",
