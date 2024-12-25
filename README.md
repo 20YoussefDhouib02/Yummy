@@ -50,7 +50,7 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
 
 - **APIs:**  
     - Google Generative AI for recipe generation.  
-    - Pixabay API for fetching recipe images.  
+    - Lexica API for fetching recipe images.  
 
 ---
 
