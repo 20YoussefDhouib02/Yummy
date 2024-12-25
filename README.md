@@ -63,7 +63,7 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
 
 2. Clone the Repository:  
     ```bash
-    git clone https://github.com/YourGithub/Yummy.git
+    git clone https://github.com/20YoussefDhouib02/Yummy.git
     cd Yummy
     ```  
 
@@ -88,4 +88,6 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
 3. Use the app on your preferred emulator or connected device.  
 
 ---
+
+Enjoy!
 
