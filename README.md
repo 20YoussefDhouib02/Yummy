@@ -1,4 +1,4 @@
-<p align="center">Yummy</p>
+# Yummy
 &nbsp; 
 <p align="center">
     <a href="https://github.com/YourGithub/Yummy">
