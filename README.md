@@ -1,7 +1,5 @@
-<p align="center">
-  <span style="font-family: 'Indie Flower', cursive; font-size: 3em;">Yummy</span>
-</p>
-
+<p align="center">Yummy</p>
+&nbsp; 
 <p align="center">
     <a href="https://github.com/YourGithub/Yummy">
         <img src="./assets/logo.png" alt="Logo">
