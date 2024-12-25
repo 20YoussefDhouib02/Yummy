@@ -1,4 +1,6 @@
-# 🍳 Yummy
+<p align="center">
+  <span style="font-family: 'Indie Flower', cursive; font-size: 3em;">Yummy</span>
+</p>
 
 <p align="center">
     <a href="https://github.com/YourGithub/Yummy">
