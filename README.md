@@ -26,7 +26,7 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
     - Unique, coherent recipes crafted using AI.  
 
 5. **🖼️ Visual Integration:**  
-    - Beautiful recipe images fetched via the Pixabay API.  
+    - Beautiful recipe images fetched via the Lexica API.  
 
 6. **🔐 User Authentication:**  
     - Secure sign-in and registration with Firebase.  
@@ -69,7 +69,7 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
 
 3. Configure Environment Variables:  
     - Create a `.env` file in the root directory.  
-    - Add your API keys for Firebase and Pixabay.  
+    - Add your API keys for Firebase and Lexica.  
 
 ---
 
