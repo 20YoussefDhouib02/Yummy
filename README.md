@@ -56,7 +56,7 @@ Yummy is your personal kitchen assistant! It suggests personalized recipes based
 
 ## **Setup Instructions:**  
 
-### **Set Up the Environment:**  
+### **Set Up The Environment:**  
 
 1. Install Flutter:  
     - Follow the [official installation guide](https://docs.flutter.dev/get-started/install).  
